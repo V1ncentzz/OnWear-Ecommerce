@@ -1,5 +1,3 @@
-// let items = fetch("/data/products.json").then(rawData => rawData.json())
-
 let currentPage = 1;
 const itemsPerPage = 12;
 let products = [];
@@ -8,8 +6,14 @@ async function getProduct() {
   const response = await fetch("/data/products.json");
   products = await response.json();
 
-  // Shuffle or randomize products by ID
   products.sort(() => Math.random() - 0.5);
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const brandFilter = urlParams.get("brand");
+
+  if (brandFilter) {
+    products = products.filter(p => p.brand?.toLowerCase() === brandFilter.toLowerCase());
+  }
 
   renderProducts();
   renderPagination();
@@ -23,7 +27,7 @@ function renderProducts() {
   let itemHTML = "";
 
   if (paginatedItems.length === 0) {
-    document.getElementById("items").innerHTML = `<p>No products found.</p>`;
+    document.getElementById("items").innerHTML = `<p>No products found for this brand.</p>`;
     return;
   }
 
@@ -31,10 +35,15 @@ function renderProducts() {
     itemHTML += `
       <div class="col-md-3 col-sm-6 mb-4">
         <div class="card h-100">
-          <img src="${product.images[0]}" class="card-img-top" alt="${product.name}" />
+          <img src="${product.images[0]}" 
+               class="card-img-top rounded mx-auto d-block" 
+               alt="${product.name}" 
+               style="height: 250px; object-fit: contain;">
           <div class="card-body text-center">
+            <h6 class="text-uppercase text-muted">${product.brand || ''}</h6>
             <h5 class="card-title">${product.name}</h5>
-            <p class="card-text text-muted">₱${product.price}</p>
+            <p class="card-text text-muted mb-2">₱${product.price}</p>
+            <button class="btn btn-primary w-100 view-detail" data-id="${product.id}">View Details</button>
           </div>
         </div>
       </div>
@@ -42,6 +51,17 @@ function renderProducts() {
   });
 
   document.getElementById("items").innerHTML = itemHTML;
+
+  document.querySelectorAll(".view-detail").forEach(button => {
+    button.addEventListener("click", () => {
+      const id = button.getAttribute("data-id");
+      const productData = products.find(p => p.id == id);
+      if (productData) {
+        localStorage.setItem("item", JSON.stringify(productData));
+        window.location.href = `product-detail.html?id=${id}`;
+      }
+    });
+  });
 }
 
 function renderPagination() {
@@ -77,45 +97,11 @@ function changePage(page) {
   renderPagination();
 }
 
-getProduct();
-
-
-// async function getProduct() {
-//     const response = await fetch("/data/products.json");
-//     const products = await response.json();
-
-//     let item = "";
-
-//     const shuffled = [...products].sort(() => Math.random() - 0.5);
-
-//     if (!products || products.length === 0) {
-//       document.getElementById("items").innerHTML = `<p>No products found.</p>`;
-//       return;
-//     }
-
-//     shuffled.forEach(product => {
-//       item += `
-//         <div class="col">
-//           <div class="card shadow-sm">
-//             <img src="${product.images[0]}" class="card-img-top" alt="${product.name}" />
-//             <div class="card-body">
-//               <h5 class="card-title">${product.name}</h5>
-//               <p class="card-text text-muted mb-1">₱${product.price || "N/A"}</p>
-//             </div>
-//           </div>
-//         </div>
-//       `;
-//     });
-
-//     document.getElementById("items").innerHTML = item;
-//   }
-
-// getProduct()
-
 document.querySelectorAll('.nav-link').forEach(link => {
-  link.addEventListener("click", (e) => {
-    const brand = e.target.dataset.brand; // e.g. "NIKE"
+    link.addEventListener("click", (e) => { 
+    const brand = e.target.dataset.brand; 
     window.location.href = `products.html?brand=${encodeURIComponent(brand)}`;
-  });
+  }); 
 });
 
+getProduct();
