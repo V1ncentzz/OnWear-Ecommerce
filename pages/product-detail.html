@@ -1,23 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
-  <title>Product Details</title>
-</head>
-<body>
-    
-  <div class="container my-5">
-    <div class="card mb-3" id="product-container" style="max-width: 540px;"></div>
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--BootStrap Start-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!--Bootstrap End-->
+    <title>Product Details</title>
+  </head>
+  <body>
+    <!--Nav Start-->
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="./index.html"
+          ><img
+            src="/images/Logo.png"
+            alt="Logo"
+            style="height: 80px; width: auto; object-fit: contain"
+        /></a>
 
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-  ></script>
-  <script src="/js/product-detail.js"></script>
-</body>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarScroll"
+          aria-controls="navbarScroll"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarScroll">
+          <ul
+            class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
+            style="--bs-scroll-height: 100px"
+          >
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-brand="NIKE">NIKE</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-brand="NEW BALANCE">NEW BALANCE</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-brand="ADIDAS">ADIDAS</a>
+            </li>
+          </ul>
+
+          <button class="btn btn-outline-success" type="submit">Cart</button>
+        </div>
+      </div>
+    </nav>
+    <!--Nav End-->
+    <div class="container my-5">
+      <div
+        class="card mb-3"
+        id="product-container"
+        style="max-width: 540px"
+      ></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/product-detail.js"></script>
+  </body>
 </html>
