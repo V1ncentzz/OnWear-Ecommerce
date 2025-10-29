@@ -1,170 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OnWear</title>
-    <link rel="stylesheet" href="/css/index.css" />
-    <!--Bootstrap start-->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
-    <!--Bootstrap end-->
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OnWear - Home</title>
+  <link rel="stylesheet" href="/css/index.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+</head>
 
-  <body>
-    <!--Navbar Start-->
-    <nav class="navbar navbar-expand-lg bg-light shadow-sm">
-      <div class="container-fluid px-5">
-        <a class="navbar-brand" href="./index.html">
-          <img
-            src="/images/Logo.png"
-            alt="Logo"
-            style="height: 80px; width: auto; object-fit: contain"
-          />
-        </a>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="./index.html">
+        <img src="/images/Logo.png" alt="OnWear Logo" style="height: 80px; width: auto; object-fit: contain">
+      </a>
 
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarScroll"
-          aria-controls="navbarScroll"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        <div class="collapse navbar-collapse" id="navbarScroll">
-          <ul
-            class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
-            style="--bs-scroll-height: 100px"
-          >
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./index.html"
-                >Home</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-brand="NIKE">NIKE</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-brand="NEW BALANCE">NEW BALANCE</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-brand="ADIDAS">ADIDAS</a>
-            </li>
-          </ul>
-
-          <button class="btn btn-outline-success" type="submit">Cart</button>
-        </div>
-      </div>
-    </nav>
-    <!--Navbar End-->
-
-    <!--Product List Start-->
-    <div class="container my-5">
-      <h1 class="text-center mb-5">Product List</h1>
-
-      <!-- Product Grid -->
-      <div
-        class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4"
-        id="items"
-      >
-        <!-- Example Product Card 1 -->
-        <div class="col">
-          <div class="card h-100 shadow-sm">
-            <img
-              src="/images/product1.jpg"
-              class="card-img-top"
-              alt="Product 1"
-            />
-            <div class="card-body text-center">
-              <h5 class="card-title">Nike Air Zoom</h5>
-              <p class="card-text">₱4,299</p>
-              <button class="btn btn-primary">Add to Cart</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Example Product Card 2 -->
-        <div class="col">
-          <div class="card h-100 shadow-sm">
-            <img
-              src="/images/product2.jpg"
-              class="card-img-top"
-              alt="Product 2"
-            />
-            <div class="card-body text-center">
-              <h5 class="card-title">Adidas Ultraboost</h5>
-              <p class="card-text">₱5,499</p>
-              <button class="btn btn-primary">Add to Cart</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Example Product Card 3 -->
-        <div class="col">
-          <div class="card h-100 shadow-sm">
-            <img
-              src="/images/product3.jpg"
-              class="card-img-top"
-              alt="Product 3"
-            />
-            <div class="card-body text-center">
-              <h5 class="card-title">New Balance 574</h5>
-              <p class="card-text">₱4,999</p>
-              <button class="btn btn-primary">Add to Cart</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Example Product Card 4 -->
-        <div class="col">
-          <div class="card h-100 shadow-sm">
-            <img
-              src="/images/product4.jpg"
-              class="card-img-top"
-              alt="Product 4"
-            />
-            <div class="card-body text-center">
-              <h5 class="card-title">Nike Dunk Low</h5>
-              <p class="card-text">₱6,299</p>
-              <button class="btn btn-primary">Add to Cart</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Pagination -->
-      <nav aria-label="Page navigation example" class="mt-5">
-        <ul class="pagination justify-content-center">
-          <li class="page-item disabled">
-            <a class="page-link">Previous</a>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
           </li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item"><a class="page-link" href="#">4</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#">Next</a>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-brand="NIKE">NIKE</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-brand="NEW BALANCE">NEW BALANCE</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-brand="ADIDAS">ADIDAS</a>
           </li>
         </ul>
-      </nav>
-    </div>
-    <!--Product List End-->
 
-    <!--Bootstrap js start-->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
-    <!--Bootstrap js end-->
-    <script src="/js/index.js"></script>
-  </body>
+        <button class="btn btn-outline-success position-relative" onclick="window.location.href='cart.html'">
+          Cart
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cartCountBadge">0</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Product List -->
+  <div class="container my-5">
+    <h1 class="text-center mb-5">Product List</h1>
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4" id="items"></div>
+    
+    <!-- Pagination -->
+    <nav aria-label="Product pagination" class="mt-5">
+      <ul class="pagination justify-content-center"></ul>
+    </nav>
+  </div>
+
+<div id="chatbot-widget-btn" class="chatbot-widget-btn">
+  <img src="/images/bot.png" alt="Chat" width="32" height="32">
+</div>
+
+<!-- Chatbot Modal -->
+<div id="chatbot-modal" class="chatbot-modal">
+  <div class="chatbot-modal-content">
+    <div class="chat-container">
+      <!-- Header -->
+      <div class="chat-header">
+        <div class="header-content">
+          <div class="bot-avatar-header">
+            <img src="/images/bot.png" alt="" width="40" height="40">
+          </div>
+          <div class="header-text">
+            <h1>AI Assistant</h1>
+            <p>Always here to help</p>
+          </div>
+          <button id="clear-chat" class="clear-chat-btn" title="Clear conversation">
+            🗑️
+          </button>
+          <button id="close-chatbot" class="close-chatbot-btn">✕</button>
+        </div>
+      </div>
+
+      <!-- Messages Area -->
+      <div class="messages-container"></div>
+
+      <!-- Input Area -->
+      <div class="input-container">
+        <div class="input-wrapper">
+          <input 
+            id="messageInput"
+            type="text" 
+            placeholder="Type your message..."
+            autocomplete="off"
+          />
+          <button class="send-button">
+            <img src="/images/send.png" alt="" width="25" height="25">
+          </button>
+        </div>
+        <p class="input-hint">Press Enter to send message</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<link rel="stylesheet" href="/ChatBot/chatbot-widget.css">
+<script src="/ChatBot/chatbot-widget.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script src="/js/index.js"></script>
+</body>
 </html>

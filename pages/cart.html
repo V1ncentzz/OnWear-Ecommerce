@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OnWear - Cart</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="./index.html">
+        <img src="/images/Logo.png" alt="OnWear Logo" style="height: 80px; width: auto; object-fit: contain">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
+          <li class="nav-item">
+            <a class="nav-link" href="./index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-brand="NIKE">NIKE</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-brand="NEW BALANCE">NEW BALANCE</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-brand="ADIDAS">ADIDAS</a>
+          </li>
+        </ul>
+
+        <button class="btn btn-outline-success position-relative" id="cartButton">
+          Cart
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cartCountBadge">0</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Cart Content -->
+  <div class="container my-5">
+    <h1 class="mb-4">🛒 Your Cart</h1>
+    <div id="cartItems"></div>
+    <h4 id="cartTotal" class="text-end mt-3"></h4>
+    <button class="btn btn-success float-end mt-3" id="checkoutBtn">Proceed to Checkout</button>
+  </div>
+
+<div id="chatbot-widget-btn" class="chatbot-widget-btn">
+  <img src="/images/bot.png" alt="Chat" width="32" height="32">
+</div>
+
+<!-- Chatbot Modal -->
+<div id="chatbot-modal" class="chatbot-modal">
+  <div class="chatbot-modal-content">
+    <div class="chat-container">
+      <!-- Header -->
+      <div class="chat-header">
+        <div class="header-content">
+          <div class="bot-avatar-header">
+            <img src="/images/bot.png" alt="" width="40" height="40">
+          </div>
+          <div class="header-text">
+            <h1>AI Assistant</h1>
+            <p>Always here to help</p>
+          </div>
+          <button id="clear-chat" class="clear-chat-btn" title="Clear conversation">
+            🗑️
+          </button>
+          <button id="close-chatbot" class="close-chatbot-btn">✕</button>
+        </div>
+      </div>
+
+      <!-- Messages Area -->
+      <div class="messages-container"></div>
+
+      <!-- Input Area -->
+      <div class="input-container">
+        <div class="input-wrapper">
+          <input 
+            id="messageInput"
+            type="text" 
+            placeholder="Type your message..."
+            autocomplete="off"
+          />
+          <button class="send-button">
+            <img src="/images/send.png" alt="" width="25" height="25">
+          </button>
+        </div>
+        <p class="input-hint">Press Enter to send message</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<link rel="stylesheet" href="/ChatBot/chatbot-widget.css">
+<script src="/ChatBot/chatbot-widget.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script src="/js/cart.js"></script>
+</body>
+</html>
