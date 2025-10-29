@@ -85,7 +85,7 @@ function clearConversationHistory() {
 
 async function loadProducts() {
   try {
-    const res = await fetch("/data/products.json");
+    const res = await fetch("data/products.json");
     productData = await res.json();
 
     const summary = productData
@@ -124,7 +124,7 @@ function addMessage(text, isBot = false) {
   const avatar = document.createElement('div');
   avatar.className = `avatar ${isBot ? 'bot-avatar' : 'user-avatar'}`;
   const avatarImg = document.createElement('img');
-  avatarImg.src = isBot ? '/images/bot.png' : '/images/user.png';
+  avatarImg.src = isBot ? 'images/bot.png' : 'images/user.png';
   avatarImg.width = 24;
   avatar.appendChild(avatarImg);
   
@@ -181,7 +181,7 @@ function showTypingIndicator() {
   div.id = 'typing-indicator';
   div.className = 'message bot-message';
   div.innerHTML = `
-    <div class="avatar bot-avatar"><img src="/images/bot.png" width="24"></div>
+    <div class="avatar bot-avatar"><img src="images/bot.png" width="24"></div>
     <div class="message-content-wrapper">
       <div class="message-bubble bot-bubble"><p>...</p></div>
     </div>

@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OnWear - Products</title>
+  <link rel="stylesheet" href="/css/common.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/theme.css">
 </head>
 
 <body>
@@ -43,9 +45,61 @@
     </div>
   </nav>
 
+  <div class="search-filter-section">
+  <div class="container">
+    <div class="row align-items-end g-3">
+      <!-- Search Box -->
+      <div class="col-md-4">
+        <div class="search-box">
+          <input 
+            type="text" 
+            id="searchInput" 
+            placeholder="Search products..." 
+            class="form-control"
+          >
+        </div>
+      </div>
+
+      <!-- Category Filter -->
+      <div class="col-md-3">
+        <div class="filter-dropdown">
+          <label for="categoryFilter">Category</label>
+          <select id="categoryFilter" class="form-select">
+            <option value="">All Brands</option>
+            <option value="Caps">Caps</option>
+            <option value="Sneakers">Shoes</option>
+            <option value="T-Shirts">T-Shirts</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Price Filter -->
+      <div class="col-md-3">
+        <div class="filter-dropdown">
+          <label for="priceFilter">Price Range</label>
+          <select id="priceFilter" class="form-select">
+            <option value="">All Prices</option>
+            <option value="0-1000">Under ₱1,000</option>
+            <option value="1000-2000">₱1,000 - ₱2,000</option>
+            <option value="2000-3000">₱2,000 - ₱3,000</option>
+            <option value="3000-99999">Above ₱3,000</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Clear Filters -->
+      <div class="col-md-2">
+        <button id="clearFilters" class="btn btn-outline-success position-relative">
+          Clear All
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
   <!-- Products Container -->
-  <div class="container my-5">
-    <h1 class="text-center mb-5">Product List</h1>
+  <div class="container">
+    <h1 class="h-text">Product List</h1>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4" id="items"></div>
   </div>
 
@@ -96,10 +150,69 @@
   </div>
 </div>
 
+<!-- Footer Start -->
+<footer class="bg-light text-dark mt-5 pt-4 pb-3 border-top">
+  <div class="container text-center text-md-start">
+    <div class="row">
+      <!-- Brand -->
+      <div class="col-md-4 mb-3">
+        <h5 class="fw-bold">OnWear</h5>
+        <p class="small text-muted">
+          Your trusted store for authentic Nike, Adidas, and New Balance apparel and sneakers.
+          Style, comfort, and quality — all in one place.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-4 mb-3">
+        <h6 class="fw-bold">Quick Links</h6>
+        <ul class="list-unstyled">
+          <li><a href="index.html" class="text-decoration-none text-dark">Home</a></li>
+          <li><a href="cart.html" class="text-decoration-none text-dark">Cart</a></li>
+          <li><a href="products.html?brand=NIKE" data-brand="NIKE" class="text-decoration-none text-dark">Nike</a></li>
+          <li><a href="products.html?brand=ADIDAS" data-brand="ADIDAS" class="text-decoration-none text-dark">Adidas</a></li>
+          <li><a href="products.html?brand=NEW BALANCE" data-brand="NEW BALANCE" class="text-decoration-none text-dark">New Balance</a></li>
+        </ul>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-md-4 mb-3">
+        <h6 class="fw-bold">Contact Us</h6>
+        <p class="small mb-1">📍 Cebu City, Philippines</p>
+        <p class="small mb-1">📞 +63 912 345 6789</p>
+        <p class="small mb-0">📧 support@onwear.ph</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="text-center py-3 mt-3 border-top small text-muted">
+    © 2025 OnWear. All rights reserved.
+  </div>
+</footer>
+<!-- Footer End -->
+
 <link rel="stylesheet" href="/ChatBot/chatbot-widget.css">
 <script src="/ChatBot/chatbot-widget.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
   <script src="/js/products.js"></script>
+
+  <script>
+  const backgrounds = ["images/bg1.jpg", "images/bg2.jpg", "images/bg3.jpg", "images/bg4.jpg", "images/bg5.jpg", "images/bg6.jpg", "images/bg7.jpg"];
+
+  function changeBackground() {
+    const randomBg = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+    document.body.style.backgroundImage = `url(${randomBg})`;
+  }
+  document.body.style.backgroundSize = "cover";
+  document.body.style.backgroundRepeat = "no-repeat";
+  document.body.style.backgroundAttachment = "fixed";
+  document.body.style.backgroundPosition = "center";
+
+  changeBackground();
+
+  setInterval(changeBackground, 4000);
+</script>
 </body>
 </html>

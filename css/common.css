@@ -1,0 +1,17 @@
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  /* background: rgba(255, 255, 255, 0.582); */
+  z-index: -1;
+}
+
+body {
+  transition: background-image 1s ease-in-out;
+  animation: fadeInBg 1s ease-in-out;
+}
+
+@keyframes fadeInBg {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
